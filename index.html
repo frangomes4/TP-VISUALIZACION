@@ -386,16 +386,16 @@
     <header class="hero">
         <div class="hero__date">25 al 31 de marzo de 2026</div>
         <h1>Una semana<br>de mi <i>vida</i>.</h1>
-        <p class="hero__lead">Durante siete días registré todo lo que hice, hora por hora. Esto es lo que aprendí mirando los datos.</p>
+        <p class="hero__lead">Durante siete días registré cada actividad consciente con su hora de inicio y fin. Estas son las cuatro preguntas que me hice sobre los datos y cómo las respondí visualmente.</p>
     </header>
 
     <!-- INTRO -->
     <section class="intro">
-        <p>Llevé un registro de mis actividades durante una semana entera. La idea era sencilla: anotar a qué hora empieza y termina cada cosa que hago, ponerle una categoría (dormir, trabajar, estudiar, comer, hacer deporte, ocio) y después ver qué sale.</p>
+        <p>El proyecto nació de una pregunta simple: si dedicara una semana a observar cómo paso mis días, ¿qué descubriría que no veo en el día a día? Para responderla, llevé un registro estructurado de cada actividad consciente: hora de inicio, hora de fin, descripción y categoría (dormir, trabajar, estudiar, comer, hacer deporte u ocio).</p>
 
-        <p>Me inspiré en el proyecto <em>Dear Data</em>, donde dos diseñadoras se mandaban postales semanales con dibujos de sus propios datos. La diferencia es que yo en lugar de dibujar a mano usé herramientas de visualización para encontrar patrones.</p>
+        <p>El método se inspira en <em>Dear Data</em>, el proyecto de Stefanie Posavec y Giorgia Lupi en el que dos diseñadoras intercambiaron postales semanales con representaciones visuales de sus propias rutinas. A diferencia de ellas, yo no dibujé a mano: usé cuatro herramientas de visualización profesional, una para responder cada pregunta del análisis.</p>
 
-        <p>Después de los siete días junté <strong>53 bloques de actividad</strong> y un total de <strong>147 horas registradas</strong>. No registré las microtransiciones (ducha, traslados, esperas) para no inflar los datos artificialmente. Lo que sigue son cuatro preguntas que me hice y cómo intenté responderlas.</p>
+        <p>El dataset final reúne <strong>53 bloques de actividad</strong> distribuidos en <strong>7 días consecutivos</strong>, totalizando <strong>147 horas registradas</strong>. No registré microtransiciones (ducha, traslados, tiempos muertos) para que el análisis se concentre en momentos significativos. Cada gráfico responde una pregunta distinta y aporta una capa de lectura diferente sobre los mismos datos.</p>
 
         <div class="stats">
             <div class="stat">
@@ -423,20 +423,45 @@
         <h2>¿Cómo se ve mi semana hora por hora?</h2>
         <span class="tool">Heatmap</span>
         <div class="section__text">
-            <p>Lo primero que quería ver era el panorama completo: una grilla con los 7 días en un eje y las 24 horas del día en el otro, pintada según qué estaba haciendo en cada momento.</p>
-            <p>Elegí Tableau porque es la mejor para armar este tipo de matrices con muchos datos. Te permite jugar con colores y filtros sin tener que escribir código.</p>
+            <p>La primera pregunta era la más amplia: ver el panorama completo de la semana en un solo gráfico. Para responderla armé una matriz de 7 filas (días) por 24 columnas (horas), donde cada celda representa una hora específica y se colorea según la actividad que ocupé en ese momento.</p>
+            <p>Elegí Tableau porque es la herramienta más sólida para construir este tipo de matrices densas con codificación cromática. Permite manejar las 168 celdas (7 × 24) de manera clara y agregar interactividad sin programar. La elección del heatmap no es casual: cuando se quiere mostrar simultáneamente patrones temporales y categóricos, esta es la representación más eficiente.</p>
         </div>
 
         <div class="viz">
-            <div class="viz__placeholder">
-                <strong>Visualización en desarrollo</strong>
-                El heatmap de Tableau se publicará en la próxima entrega.
+            <div class='tableauPlaceholder' id='viz1777825973959' style='position: relative'>
+                <noscript>
+                    <a href='#'><img alt='Hoja 1' src='https://public.tableau.com/static/images/ok/ok_17778258600630/Hoja1/1_rss.png' style='border: none' /></a>
+                </noscript>
+                <object class='tableauViz' style='display:none;'>
+                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                    <param name='embed_code_version' value='3' />
+                    <param name='site_root' value='' />
+                    <param name='name' value='ok_17778258600630/Hoja1' />
+                    <param name='tabs' value='no' />
+                    <param name='toolbar' value='yes' />
+                    <param name='static_image' value='https://public.tableau.com/static/images/ok/ok_17778258600630/Hoja1/1.png' />
+                    <param name='animate_transition' value='yes' />
+                    <param name='display_static_image' value='yes' />
+                    <param name='display_spinner' value='yes' />
+                    <param name='display_overlay' value='yes' />
+                    <param name='display_count' value='yes' />
+                    <param name='language' value='es-ES' />
+                </object>
             </div>
+            <script type='text/javascript'>
+                var divElement = document.getElementById('viz1777825973959');
+                var vizElement = divElement.getElementsByTagName('object')[0];
+                vizElement.style.width = '100%';
+                vizElement.style.height = (divElement.offsetWidth * 0.55) + 'px';
+                var scriptElement = document.createElement('script');
+                scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                vizElement.parentNode.insertBefore(scriptElement, vizElement);
+            </script>
         </div>
 
         <div class="insight">
             <div class="insight__label">Lo que veo</div>
-            <p>De lunes a viernes el patrón se repite casi idéntico: duermo hasta las 7, voy al gym a las 8, y de ahí en adelante es todo trabajo o facultad. El sábado y domingo cambia todo: desaparecen los bloques de estudio y aparecen muchas horas seguidas de ocio. <strong>Mi semana laboral es muy estructurada y mi fin de semana es lo opuesto.</strong></p>
+            <p>De lunes a viernes el patrón se repite casi idéntico: sueño hasta las 7, gym a las 8, productividad concentrada entre las 10 y las 22 (oficina y facultad alternándose), y el sueño nuevamente entre las 23 y las 7 del día siguiente. El sábado y domingo el patrón se rompe por completo: desaparecen los bloques de estudio, el sueño se desplaza a horarios irregulares y aparecen extensas franjas de ocio. <strong>La consistencia del horario de sueño en días laborales contrasta fuertemente con el desorden del fin de semana</strong> — y esa regularidad de los días hábiles es el primer indicador de que tengo una rutina estable.</p>
         </div>
     </section>
 
@@ -446,8 +471,8 @@
         <h2>¿Cómo se compone cada día?</h2>
         <span class="tool">Barras 100% apiladas</span>
         <div class="section__text">
-            <p>Después quise comparar los días entre sí, pero no en horas absolutas (porque algunos días registré más que otros) sino en porcentajes. Una barra por día, dividida según el porcentaje que ocupa cada categoría.</p>
-            <p>Flourish me sirvió porque tiene una plantilla específica para barras 100% apiladas y deja agregar interactividad (tooltips) sin complicaciones.</p>
+            <p>El heatmap muestra cuándo hago cada cosa, pero no permite comparar fácilmente la composición interna de cada día. La segunda pregunta apunta a eso: si tomo cada día por separado y veo qué porcentaje del tiempo le dedico a cada categoría, ¿se mantienen estables o cambian? Para responder normalicé las barras al 100%, lo que elimina el sesgo de que algunos días tienen más horas registradas que otros y deja la comparación enfocada en proporciones.</p>
+            <p>Flourish es la herramienta apropiada para este tipo de comparación: tiene una plantilla específica de barras apiladas al 100%, permite incorporar interactividad mediante tooltips y mantiene el chart limpio sin requerir código. La normalización al 100% es una decisión analítica: quiero comparar estructura, no volumen.</p>
         </div>
 
         <div class="viz">
@@ -459,30 +484,27 @@
 
         <div class="insight">
             <div class="insight__label">Lo que veo</div>
-            <p>El sábado el ocio ocupa más de la mitad de mi día. Los días de semana, el trabajo y estudio juntos siempre superan el 50%. Lo más interesante es comparar el sábado contra cualquier día laboral: parecen dos vidas distintas. <strong>El sábado es el único día sin sueño registrado</strong> — me voy a dormir tarde y duermo recién en la madrugada del domingo.</p>
+            <p>De lunes a viernes la composición se mantiene notablemente estable: trabajo más estudio ocupan siempre más del 50% de cada día y el sueño es la segunda categoría más grande. El sábado quiebra ese patrón completamente: el ocio supera el 60% del tiempo registrado y desaparecen tanto el estudio como el trabajo. <strong>El sábado es además el único día sin sueño registrado dentro del propio día</strong> — me acuesto tarde y el sueño aparece recién en la madrugada del domingo. Esto evidencia dos modos de vida muy diferentes funcionando dentro de la misma semana: estructura productiva entre semana, descompresión social en el fin.</p>
         </div>
     </section>
 
     <!-- VIZ 3 -->
     <section class="section">
         <div class="section__num"><span>03</span> · RAWGraphs</div>
-        <h2>¿Qué actividades concretas hago en la semana?</h2>
-        <span class="tool">Diagrama aluvial</span>
+        <h2>¿En qué actividades concretas se va mi tiempo?</h2>
+        <span class="tool">Treemap jerárquico</span>
         <div class="section__text">
-            <p>Las dos primeras visualizaciones me mostraban categorías generales (Ejercicio, Trabajo, Estudio, etc.). Pero quería ir más al detalle: ¿qué tipo de ejercicio hago? ¿solo gym, o también deportes? Para eso armé un diagrama aluvial que conecta tres niveles: el día, la categoría y la actividad concreta.</p>
-            <p>RAWGraphs es ideal para esto porque permite mapear varios niveles jerárquicos en un solo gráfico sin tener que armar la tabla resumen previo. Solamente le pasás los datos crudos y la herramienta los agrupa.</p>
+            <p>Las dos primeras visualizaciones trabajan a nivel de categorías generales (Ejercicio, Trabajo, Estudio…). Pero quería ir un nivel más profundo: dentro de cada categoría, ¿qué actividades específicas se llevan más tiempo? Por ejemplo, dentro de Ejercicio, ¿cuánto es Gym y cuánto es deporte recreativo? Para responder esto armé un treemap, que muestra la jerarquía categoría → actividad mediante rectángulos cuya área es proporcional al tiempo dedicado.</p>
+            <p>RAWGraphs es la herramienta apropiada porque permite construir treemaps jerárquicos directamente desde los datos sin necesidad de pre-agregar manualmente. Su modelo de mapeo declarativo facilita visualizar relaciones jerárquicas con áreas proporcionales, lo que convierte al treemap en una herramienta perfecta para responder la pregunta de "dónde se concentra realmente mi tiempo".</p>
         </div>
 
         <div class="viz">
-            <div class="viz__placeholder">
-                <strong>Visualización en desarrollo</strong>
-                El diagrama aluvial de RAWGraphs se publicará en la próxima entrega.
-            </div>
+            <img src="treemap.svg" alt="Treemap de actividades de la semana">
         </div>
 
         <div class="insight">
             <div class="insight__label">Lo que veo</div>
-            <p>Mi rutina es muy modular: el Gym aparece todos los días de semana a la misma hora, la Oficina y la Facultad alternan según el día. Pero el fin de semana todo cambia: aparecen Padel, Tenis, Fútbol, Asado con amigos, Asado con la familia. <strong>El ejercicio durante la semana es entrenamiento en solitario; los fines de semana es deporte social.</strong> Son dos modos completamente distintos de moverme.</p>
+            <p>Tres bloques se llevan la mayor parte de mi semana: <strong>Dormir (47h), Oficina (27h) y Facultad (22h)</strong>; juntos suman casi el 65% del tiempo registrado. El Ejercicio aparece distribuido en cuatro actividades de tamaño similar (Gym, Padel, Tenis y Fútbol), lo que indica que es un hábito variado pero ninguna actividad domina. En el Ocio, el bloque "Amigos" (14h) es más de tres veces más grande que "Familia" (4h) — el tiempo social está fuertemente sesgado hacia los pares. Comer queda dominado por Cena y Desayuno, mientras que los almuerzos y comidas formales son secundarios. Este gráfico responde a la pregunta más concreta: si tuviera que decir en qué se va mi tiempo, la respuesta visual son esos tres bloques grandes.</p>
         </div>
     </section>
 
@@ -492,8 +514,8 @@
         <h2>¿Estoy viviendo de manera saludable?</h2>
         <span class="tool">Comparación con benchmarks</span>
         <div class="section__text">
-            <p>Después de mirar mi semana decidí comparar mis números con los rangos recomendados: la OMS recomienda dormir entre 7 y 9 horas, hacer entre 2.5 y 5 horas de ejercicio moderado por semana, y la OIT marca 48 horas semanales como límite saludable de trabajo.</p>
-            <p>Datawrapper me dejó armar un gráfico de barras con áreas de referencia que muestran el rango recomendado al lado de mi valor real. Esto convierte el ejercicio en algo más útil que solo mirar mis datos: me dice si estoy bien o mal según la ciencia.</p>
+            <p>Las tres primeras visualizaciones me dicen <em>cómo</em> uso mi tiempo, pero no me dicen si lo uso bien. Para responder eso necesitaba un punto de comparación externo. Tomé las recomendaciones de organismos internacionales como benchmark: la OMS sugiere dormir entre 7 y 9 horas diarias y hacer entre 2.5 y 5 horas de ejercicio moderado por semana; la OIT marca 48 horas semanales como límite saludable de trabajo; la literatura sobre wellbeing recomienda al menos 7 horas semanales de tiempo social.</p>
+            <p>Datawrapper es la herramienta indicada porque permite construir bar charts limpios y agregar tablas comparativas con áreas de referencia. La lectura es directa: bloque verde si cumplo, rojo si tengo déficit, naranja si excedo. Esta visualización transforma el análisis de descriptivo a diagnóstico — me dice no solo qué hago sino si lo que hago es saludable según evidencia científica.</p>
         </div>
 
         <div class="viz">
@@ -560,16 +582,17 @@
 
         <div class="insight">
             <div class="insight__label">Lo que veo</div>
-            <p>El sueño está apenas por debajo del mínimo recomendado: <strong>6.7 horas promedio por día</strong>, cuando la OMS sugiere entre 7 y 9. Es un déficit chico (faltan 2 horas a la semana), pero existe. El ejercicio en cambio sobra: hago casi tres veces más de lo recomendado. Y la suma de trabajo + estudio queda apenas por encima del límite de la OIT. La conclusión: dormir un poco más y bajar la carga laboral.</p>
+            <p>La radiografía es clara. <strong>Sueño</strong>: 47 h/sem, equivalente a 6.7 h/día — apenas dos horas por debajo del mínimo OMS. <strong>Ejercicio</strong>: 14 h/sem, casi triplica el rango recomendado (excede positivo). <strong>Trabajo + Estudio</strong>: 52 h/sem, supera en 4 horas el límite OIT de 48 h semanales. <strong>Ocio social y comer</strong> están dentro del rango saludable. En síntesis: la actividad física sobra, lo social está bien, y los puntos a mejorar son específicos y accionables — dormir un poco más y reducir la carga académica/laboral.</p>
         </div>
     </section>
 
     <!-- CONCLUSION -->
     <section class="conclusion">
         <div class="conclusion__label">Conclusión</div>
-        <h3>La rutina está bien armada. Lo que más cargo es el trabajo y el estudio.</h3>
-        <p>Visualizar una semana mostró cosas que no se notan al vivirla. La estructura de mis días es muy ordenada y previsible —algo bueno para mantener hábitos— y el sueño está casi en el rango saludable, apenas dos horas por debajo del mínimo OMS. Lo que excede es la carga de trabajo más estudio: 52 horas semanales contra el límite de 48 que define la OIT.</p>
-        <p>Si tuviera que seguir tracking más tiempo, agregaría dos cosas: <strong>nivel de energía</strong> (del 1 al 5) y <strong>foco</strong> (con o sin interrupciones) en cada bloque. Eso me dejaría cruzar cuánto tiempo dedico a algo con qué tan bien lo aprovecho, que es algo que estos cuatro gráficos no muestran.</p>
+        <h3>Cuatro gráficos, una semana, una historia coherente.</h3>
+        <p>Cada visualización responde a una pregunta distinta y entre las cuatro construyen una lectura completa. El <strong>heatmap de Tableau</strong> mostró que mi semana laboral tiene un ritmo circadiano consistente, con bloques de productividad ordenados entre las 8 y las 22, mientras que el fin de semana rompe completamente esa estructura. Las <strong>barras apiladas de Flourish</strong> confirmaron esa lectura desde otra perspectiva: trabajo más estudio dominan los días hábiles, y el sábado se invierte completamente con más del 60% del tiempo en ocio.</p>
+        <p>El <strong>treemap de RAWGraphs</strong> bajó al detalle y mostró dónde se concentra realmente el tiempo: tres actividades —Dormir, Oficina y Facultad— concentran el 65% del total. El <strong>bar chart con benchmarks de Datawrapper</strong> cerró el análisis con un diagnóstico cuantitativo: la rutina es saludable en casi todos los frentes, con dos puntos a corregir — un déficit chico de sueño (2h por debajo del mínimo OMS) y una carga laboral apenas por encima del límite OIT.</p>
+        <p>La conclusión narrativa es que mi rutina está bien estructurada y los hábitos están en línea con las recomendaciones de salud, pero hay margen específico de mejora.</p>
     </section>
 
     <!-- FOOTER -->
